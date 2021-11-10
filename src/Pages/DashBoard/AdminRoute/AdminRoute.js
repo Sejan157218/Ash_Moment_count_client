@@ -8,10 +8,8 @@ import useAuth from '../../../hook/useAuth';
 
 const AdminRoute = ({ children, ...rest }) => {
     const { user, isLoading, isAdmin } = useAuth();
-    if (isLoading) {
-        return <div className="text-center">
-            <Spinner animation="border" variant="success" />
-        </div>
+    if (isLoading || !isAdmin) {
+        return <Spinner className="mx-auto" animation="border" variant="success" />
     }
     return (
         <Route

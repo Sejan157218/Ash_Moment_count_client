@@ -12,6 +12,7 @@ import SignUp from './Pages/Share/SignUp/SignUp';
 import AuthProvider from './Context/AuthProvider';
 import DashBoard from './Pages/DashBoard/DashBoard/DashBoard';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
+import AboutUS from './Pages/AboutUS/AboutUS';
 
 function App() {
   return (
@@ -19,16 +20,19 @@ function App() {
       <AuthProvider>
         <Router>
           <Switch>
-            <Route exact path="/">
+            <Route exact path='/'>
               <Home></Home>
             </Route>
-            <Route path="/signin">
-              <SignIn></SignIn>
-            </Route>
-            <PrivateRoute path="/dashboard">
+            <PrivateRoute path='/dashboard'>
               <DashBoard></DashBoard>
             </PrivateRoute>
-            <Route path="/signup">
+            <Route path='/signin'>
+              <SignIn></SignIn>
+            </Route>
+            <PrivateRoute path='/aboutus'>
+              <AboutUS></AboutUS>
+            </PrivateRoute>
+            <Route path='/signup'>
               <SignUp></SignUp>
             </Route>
           </Switch>

@@ -66,15 +66,15 @@ const useFirebase = () => {
             }).finally(() => setIsLoading(false));
     }
 
-    // Logout for email pass
+    // Logout 
     const SignOut = () => {
         setIsLoading(true)
         signOut(auth).then(() => {
             setAuthError('')
+
         }).catch((error) => {
             setAuthError(error.message)
-        })
-            .finally(() => setIsLoading(false));
+        }).finally(() => setIsLoading(false));
     }
 
 
@@ -94,7 +94,6 @@ const useFirebase = () => {
 
     // find admin 
     useEffect(() => {
-
         fetch(`http://localhost:9000/user/${user?.email}`)
             .then(res => res.json())
             .then(data => {
@@ -114,7 +113,6 @@ const useFirebase = () => {
         });
         return () => unsubscribed;
     }, [auth]);
-    console.log(isAdmin);
     return {
         user,
         handlerRegisterToEmailPass,

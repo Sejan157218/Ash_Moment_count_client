@@ -29,7 +29,7 @@ const Header = () => {
                     <Navbar.Text>
                         <Nav className="me-auto header-nav">
                             <Nav.Link className="nav-color" as={Link} to="/">Home</Nav.Link>
-                            <Nav.Link className="nav-color" as={Link} to="/dashboard">DashBoard</Nav.Link>
+                            <Nav.Link className="nav-color" as={Link} to="/aboutus">About Us</Nav.Link>
 
                             {/* <Nav.Link as={Link} to="/about">About</Nav.Link>
                             <Nav.Link as={Link} to="/contact">Contact</Nav.Link> */}
@@ -40,8 +40,9 @@ const Header = () => {
                             {
                                 user.email ?
                                     <Navbar.Text style={{ display: 'flex' }}>
+                                        <Nav.Link className="nav-color" as={Link} to="/dashboard">DashBoard</Nav.Link>
                                         <Nav.Link as={Link} style={{ marginRight: "1rem" }} to="">{user.displayName || user?.email}</Nav.Link>
-                                        <Nav.Link onClick={() => SignOut()}> Log Out</Nav.Link>
+                                        <Nav.Link onClick={SignOut}> Log Out</Nav.Link>
                                     </Navbar.Text> :
                                     <Navbar.Text style={{ display: 'flex' }}>
                                         <Nav.Link as={Link} style={{ paddingRight: "0" }} to="/signin"> Sign In</Nav.Link>
