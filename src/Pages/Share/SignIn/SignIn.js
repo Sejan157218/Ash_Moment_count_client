@@ -25,7 +25,7 @@ const SignIn = () => {
     return (
         <div className="login-div " style={{ height: "100vh" }}>
             <div className="text-center login-container py-5 shadow p-3 mb-5 rounded">
-                <h1 className="pb-3">Login</h1>
+                <h1 className="pb-3">Sign In</h1>
                 <div>
                     <form onSubmit={handleSubmit(onSubmit)} className="input-icons">
                         <i className="far fa-envelope icon"></i>
@@ -37,7 +37,7 @@ const SignIn = () => {
                         <p>Forget Password ?</p>
                         <input className="w-100 button-login" type="submit" />
                     </form>
-                    <p className="pt-3">Or Login With</p>
+                    <p className="pt-3">Or Sign In With</p>
                     <Row>
                         <Col xs={6} className="mb-2"><Button className="button-login " onClick={() => handlerGoogleLoin()}> <i class="fab fa-google me-2"></i>Google</Button>
                         </Col>

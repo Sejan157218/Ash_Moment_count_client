@@ -8,7 +8,8 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [authError, setAuthError] = useState('');
-   
+    const [isAdmin, setIsAdmin] = useState(false)
+
 
 
     const auth = getAuth();
@@ -89,6 +90,18 @@ const useFirebase = () => {
         }).then(res => res.json())
             .then(data => console.log(data))
     }
+
+
+    // find admin 
+    useEffect(() => {
+
+        fetch(`http://localhost:9000/user/${user?.email}`)
+            .then(res => res.json())
+            .then(data => {
+                setIsAdmin(data.admin)
+            })
+    }, [user.email])
+    // onAuthStateChanged
     useEffect(() => {
         const unsubscribed = onAuthStateChanged(auth, (user) => {
             if (user) {
@@ -101,13 +114,14 @@ const useFirebase = () => {
         });
         return () => unsubscribed;
     }, [auth]);
-
+    console.log(isAdmin);
     return {
         user,
         handlerRegisterToEmailPass,
         handlerLoginWithEmailPass,
         handlerToGoogleLogin,
         SignOut,
+        isAdmin,
         authError,
         isLoading,
     }

@@ -2,7 +2,7 @@ import Button from '@restart/ui/esm/Button';
 import React, { useState } from 'react';
 import { Col, Nav, Row } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
-import { Link, useHistory,useLocation } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../../hook/useAuth';
 
 const SignUp = () => {
@@ -10,7 +10,7 @@ const SignUp = () => {
     const { handlerToGoogleLogin, handlerRegisterToEmailPass } = useAuth();
     const { register, handleSubmit, formState: { errors } } = useForm();
     const history = useHistory();
-    const location =useLocation()
+    const location = useLocation()
 
     // form submit
     const onSubmit = ({ name, email, password, rePassword }) => {
@@ -22,9 +22,9 @@ const SignUp = () => {
             setErrorSignup('password not match...try again')
         }
     }
-// google login
-    const handlerGoogleLogin = ()=>{
-        handlerToGoogleLogin(history,location)
+    // google login
+    const handlerGoogleLogin = () => {
+        handlerToGoogleLogin(history, location)
     }
 
     return (
@@ -56,7 +56,7 @@ const SignUp = () => {
                         <Col xs={6} ><Button className="button-login "><i className="fab fa-github me-2"></i>Github</Button>
                         </Col>
                     </Row>
-                    <p className="pt-3">Already have account ? <Nav.Link as={Link} to={'/login'} className="Services-nav ps-0" style={{ display: "inline" }}>Login</Nav.Link></p>
+                    <p className="pt-3">Already have account ? <Nav.Link as={Link} to={'/signin'} className="Services-nav ps-0" style={{ display: "inline" }}>Login</Nav.Link></p>
                 </div>
             </div>
         </div>

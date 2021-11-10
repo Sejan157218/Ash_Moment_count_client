@@ -11,6 +11,7 @@ import SignIn from './Pages/Share/SignIn/SignIn';
 import SignUp from './Pages/Share/SignUp/SignUp';
 import AuthProvider from './Context/AuthProvider';
 import DashBoard from './Pages/DashBoard/DashBoard/DashBoard';
+import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -24,9 +25,9 @@ function App() {
             <Route path="/signin">
               <SignIn></SignIn>
             </Route>
-            <Route path="/dashboard">
+            <PrivateRoute path="/dashboard">
               <DashBoard></DashBoard>
-            </Route>
+            </PrivateRoute>
             <Route path="/signup">
               <SignUp></SignUp>
             </Route>
