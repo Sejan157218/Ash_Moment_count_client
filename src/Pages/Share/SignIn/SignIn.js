@@ -14,12 +14,12 @@ const SignIn = () => {
     const { handlerToGoogleLogin, handlerLoginWithEmailPass } = useAuth();
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = ({ email, password }) => {
-        handlerLoginWithEmailPass(email, password)
+        handlerLoginWithEmailPass(email, password,history,location)
     }
 
-
+    // google login
     const handlerGoogleLoin = () => {
-        handlerToGoogleLogin()
+        handlerToGoogleLogin(history, location)
     }
 
     return (

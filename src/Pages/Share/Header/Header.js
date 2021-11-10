@@ -6,7 +6,7 @@ import useAuth from '../../../hook/useAuth';
 import "./Header.css";
 
 const Header = () => {
-    const { user, logOut } = useAuth();
+    const { user, SignOut } = useAuth();
     const [scroll, setScroll] = useState(false);
 
     const scrollOnChange = () => {
@@ -32,7 +32,6 @@ const Header = () => {
                             <Nav.Link className="nav-color" as={Link} to="/dashboard">DashBoard</Nav.Link>
 
                             {/* <Nav.Link as={Link} to="/about">About</Nav.Link>
-                            <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
                             <Nav.Link as={Link} to="/contact">Contact</Nav.Link> */}
                         </Nav>
                     </Navbar.Text>
@@ -42,12 +41,11 @@ const Header = () => {
                                 user.email ?
                                     <Navbar.Text style={{ display: 'flex' }}>
                                         <Nav.Link as={Link} style={{ marginRight: "1rem" }} to="">{user.displayName || user?.email}</Nav.Link>
-                                        <Nav.Link onClick={() => logOut()}> Log Out</Nav.Link>
+                                        <Nav.Link onClick={() => SignOut()}> Log Out</Nav.Link>
                                     </Navbar.Text> :
                                     <Navbar.Text style={{ display: 'flex' }}>
                                         <Nav.Link as={Link} style={{ paddingRight: "0" }} to="/signin"> Sign In</Nav.Link>
-                                        <Nav.Link as={Link}  to="/signup">/ Sign Up</Nav.Link>
-                                        
+                                        <Nav.Link as={Link} to="/signup">/ Sign Up</Nav.Link>
                                     </Navbar.Text>
                             }
                         </Nav>

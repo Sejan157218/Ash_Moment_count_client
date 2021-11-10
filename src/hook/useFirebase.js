@@ -8,7 +8,7 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [authError, setAuthError] = useState('');
-    // const [isAdmin, setIsAdmin] = useState(false);
+   
 
 
     const auth = getAuth();
@@ -20,6 +20,7 @@ const useFirebase = () => {
             .then((userCredential) => {
                 const newUser = { email: email, displayName: name }
                 setUser(newUser);
+                saveUser(email, name, "POST")
                 updateProfile(auth.currentUser, {
                     displayName: name,
                 }).then(() => {
@@ -34,8 +35,9 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     }
 
-    // handler to login with email
-    const handlerLoginWithEmailPass = (email, password, location, history) => {
+    // handler to login with email and pass
+    const handlerLoginWithEmailPass = (email, password, history, location) => {
+        console.log(email, password, location, history);
         setIsLoading(true)
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
@@ -49,11 +51,12 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     }
     // google sign in
-    const handlerToGoogleLogin = (location, history) => {
+    const handlerToGoogleLogin = (history, location) => {
         setIsLoading(true)
         signInWithPopup(auth, googleProvider)
             .then((result) => {
                 const user = result.user;
+                saveUser(user.email, user.displayName, "PUT")
                 const destination = location?.state?.from || "/";
                 history.replace(destination);
                 setAuthError('');
@@ -63,7 +66,7 @@ const useFirebase = () => {
     }
 
     // Logout for email pass
-    const logout = () => {
+    const SignOut = () => {
         setIsLoading(true)
         signOut(auth).then(() => {
             setAuthError('')
@@ -74,17 +77,18 @@ const useFirebase = () => {
     }
 
 
-
-    // // is Admin
-    // useEffect(() => {
-    //     fetch(`https://whispering-garden-01955.herokuapp.com/users/${user.email}`)
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             setIsAdmin(data.admin)
-    //         })
-    // }, [user.email])
-
-    // onAuthStateChanged
+    // user save in mongoDb
+    const saveUser = (email, displayName, method) => {
+        const users = { email, displayName }
+        fetch('http://localhost:9000/users', {
+            method: method,
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(users)
+        }).then(res => res.json())
+            .then(data => console.log(data))
+    }
     useEffect(() => {
         const unsubscribed = onAuthStateChanged(auth, (user) => {
             if (user) {
@@ -103,8 +107,7 @@ const useFirebase = () => {
         handlerRegisterToEmailPass,
         handlerLoginWithEmailPass,
         handlerToGoogleLogin,
-        logout,
-        // isAdmin,
+        SignOut,
         authError,
         isLoading,
     }

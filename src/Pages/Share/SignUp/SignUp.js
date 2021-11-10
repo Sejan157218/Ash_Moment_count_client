@@ -2,24 +2,30 @@ import Button from '@restart/ui/esm/Button';
 import React, { useState } from 'react';
 import { Col, Nav, Row } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useHistory,useLocation } from 'react-router-dom';
 import useAuth from '../../../hook/useAuth';
 
 const SignUp = () => {
     const [errorSignup, setErrorSignup] = useState('')
-    const { signInWithGoogle, handlerRegisterToEmailPass } = useAuth();
+    const { handlerToGoogleLogin, handlerRegisterToEmailPass } = useAuth();
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const history = useHistory();
+    const location =useLocation()
 
+    // form submit
     const onSubmit = ({ name, email, password, rePassword }) => {
-        if (password == rePassword) {
+        if (password === rePassword) {
             setErrorSignup('')
-            handlerRegisterToEmailPass(name, email, password);
+            handlerRegisterToEmailPass(email, password, name, history);
         }
         else {
             setErrorSignup('password not match...try again')
         }
     }
-
+// google login
+    const handlerGoogleLogin = ()=>{
+        handlerToGoogleLogin(history,location)
+    }
 
     return (
         <div className="login-div " style={{ height: "100vh" }}>
@@ -45,9 +51,9 @@ const SignUp = () => {
                     </form>
                     <p className="pt-3">Or Login With</p>
                     <Row>
-                        <Col xs={6} className="mb-2"><Button className="button-login" onClick={() => signInWithGoogle()}> <i class="fab fa-google me-2"></i>Google</Button>
+                        <Col xs={6} className="mb-2"><Button className="button-login" onClick={handlerGoogleLogin}> <i className="fab fa-google me-2"></i>Google</Button>
                         </Col>
-                        <Col xs={6} ><Button className="button-login "><i class="fab fa-github me-2"></i>Github</Button>
+                        <Col xs={6} ><Button className="button-login "><i className="fab fa-github me-2"></i>Github</Button>
                         </Col>
                     </Row>
                     <p className="pt-3">Already have account ? <Nav.Link as={Link} to={'/login'} className="Services-nav ps-0" style={{ display: "inline" }}>Login</Nav.Link></p>
