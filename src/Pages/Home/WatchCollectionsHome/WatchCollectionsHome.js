@@ -11,7 +11,6 @@ const WatchCollectionsHome = () => {
             .then(res => res.json())
             .then(data => setWeatchCollectin(data))
     }, [])
-    console.log(weatchCollectin);
     return (
         <div>
             <Row xs={1} md={3} className="g-4">
