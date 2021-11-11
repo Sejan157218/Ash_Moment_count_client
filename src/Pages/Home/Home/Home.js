@@ -1,6 +1,7 @@
 import React from 'react';
 import Footer from '../../Share/Footer/Footer';
 import Header from '../../Share/Header/Header';
+import ShowReviews from '../../ShowReviews/ShowReviews';
 import WatchCollectionsHome from '../WatchCollectionsHome/WatchCollectionsHome';
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
         <div>
             <Header />
             <WatchCollectionsHome />
+            <ShowReviews></ShowReviews>
             <Footer />
         </div>
     );

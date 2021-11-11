@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Button, Card, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -12,7 +13,27 @@ const MyOrders = () => {
             .then(res => res.json())
             .then(data => setMyOrder(data))
     }, [user?.email])
-    console.log(setMyOrder);
+
+
+    const handlerToDelete = id => {
+        const proceed = window.confirm('Are You want delete');
+        if (proceed) {
+            axios.delete(`http://localhost:9000/myorder?email=${user?.email}&&id=${id}`)
+                .then(function (response) {
+                    // handle success
+                    if (response.data.deletedCount > 0) {
+                        console.log('dd', id);
+                        const filterProduct = myOrder.filter(order => order._id !== id);
+                        setMyOrder(filterProduct)
+                        alert('delete successFully')
+                    }
+                })
+                .catch(function (error) {
+                    // handle error
+                    console.log(error);
+                })
+        }
+    }
     return (
         <div>
             <Row xs={1} md={3} className="g-4">
@@ -26,7 +47,7 @@ const MyOrders = () => {
                                     {order?.productDesc}
                                 </Card.Text>
                             </Card.Body>
-                            <Link to={`order/${order?._id}`}> <Button>order</Button></Link>
+                            <Button onClick={() => handlerToDelete(order?._id)}>Delete</Button>
                         </Card>
                     </Col>
                 ))}

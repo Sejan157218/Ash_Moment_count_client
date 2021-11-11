@@ -24,6 +24,7 @@ const DashBoard = () => {
 
                         {
                             user?.email && !isAdmin && <div>
+                                <Nav.Link as={Link} to='/'>Home</Nav.Link>
                                 <Nav.Link as={Link} to={`${url}`}>DashBoard</Nav.Link>
                                 <Nav.Link as={Link} to={`${url}/myorder`}>My Orders</Nav.Link>
                                 <Nav.Link as={Link} to={`${url}/review`}>Review</Nav.Link>
@@ -33,6 +34,7 @@ const DashBoard = () => {
                         }
                         {
                             user?.email && isAdmin && <>
+                                <Nav.Link as={Link} to='/'>Home</Nav.Link>
                                 <Nav.Link as={Link} to={`${url}/manageallorder`}>Manage All Orders</Nav.Link>
                                 <Nav.Link as={Link} to={`${url}/addproduct`}>Add A Product</Nav.Link>
                                 <Nav.Link as={Link} to={`${url}/makeadmin`}>Make Admin</Nav.Link>

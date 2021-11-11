@@ -27,6 +27,7 @@ const OrderPgae = () => {
         data.productPrice = products?.price;
         data.productDesc = products?.desc;
         data.productRating = products?.rating;
+        data.date = new Date().toLocaleDateString();
         axios.post(`http://localhost:9000/allorder`, data)
             .then(function (response) {
                 if (response.data.insertedId) {
