@@ -13,6 +13,7 @@ import AuthProvider from './Context/AuthProvider';
 import DashBoard from './Pages/DashBoard/DashBoard/DashBoard';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 import AboutUS from './Pages/AboutUS/AboutUS';
+import OrderPgae from './Pages/OrderPgae/OrderPgae';
 
 function App() {
   return (
@@ -29,9 +30,12 @@ function App() {
             <Route path='/signin'>
               <SignIn></SignIn>
             </Route>
-            <PrivateRoute path='/aboutus'>
+            <Route path='/aboutus'>
               <AboutUS></AboutUS>
-            </PrivateRoute>
+            </Route>
+            <Route path='/order/:id'>
+              <OrderPgae></OrderPgae>
+            </Route>
             <Route path='/signup'>
               <SignUp></SignUp>
             </Route>

@@ -7,7 +7,6 @@ const Home = () => {
     return (
         <div>
             <Header />
-            Home
             <WatchCollectionsHome />
             <Footer />
         </div>
