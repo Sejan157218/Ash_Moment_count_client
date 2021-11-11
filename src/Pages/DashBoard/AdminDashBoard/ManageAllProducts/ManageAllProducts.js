@@ -6,7 +6,7 @@ const ManageAllProducts = () => {
     const [allProducts, setallProducts] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:9000/watchCollection')
+        fetch('https://ancient-river-07627.herokuapp.com/watchCollection')
             .then(res => res.json())
             .then(data => setallProducts(data))
     }, []);
@@ -15,7 +15,7 @@ const ManageAllProducts = () => {
     const handlerToDelete = id => {
         const proceed = window.confirm('Are You sure to delete this');
         if (proceed) {
-            axios.delete(`http://localhost:9000/watchCollection/${id}`)
+            axios.delete(`https://ancient-river-07627.herokuapp.com/watchCollection/${id}`)
                 .then(function (response) {
                     if (response.data.deletedCount > 0) {
                         const filterOrder = allProducts.filter(product => product._id !== id);

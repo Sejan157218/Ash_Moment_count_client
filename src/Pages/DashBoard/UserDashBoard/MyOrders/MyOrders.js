@@ -9,7 +9,7 @@ const MyOrders = () => {
     const { user } = useAuth();
 
     useEffect(() => {
-        fetch(`http://localhost:9000/myorder?email=${user?.email}`)
+        fetch(`https://ancient-river-07627.herokuapp.com/myorder?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setMyOrder(data))
     }, [user?.email])
@@ -18,11 +18,10 @@ const MyOrders = () => {
     const handlerToDelete = id => {
         const proceed = window.confirm('Are You want delete');
         if (proceed) {
-            axios.delete(`http://localhost:9000/myorder?email=${user?.email}&&id=${id}`)
+            axios.delete(`https://ancient-river-07627.herokuapp.com/myorder?email=${user?.email}&&id=${id}`)
                 .then(function (response) {
                     // handle success
                     if (response.data.deletedCount > 0) {
-                        console.log('dd', id);
                         const filterProduct = myOrder.filter(order => order._id !== id);
                         setMyOrder(filterProduct)
                         alert('delete successFully')

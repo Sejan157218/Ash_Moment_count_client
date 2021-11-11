@@ -7,7 +7,7 @@ const AddProduct = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         data.date = new Date().toLocaleDateString()
-        axios.post('http://localhost:9000/watchCollection', data)
+        axios.post('https://ancient-river-07627.herokuapp.com/watchCollection', data)
             .then(function (response) {
                 if (response.data.insertedId) {
                     alert('successfully added');

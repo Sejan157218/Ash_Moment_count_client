@@ -7,7 +7,7 @@ const WatchCollectionsHome = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:9000/watchCollection')
+        fetch('https://ancient-river-07627.herokuapp.com/watchCollection')
             .then(res => res.json())
             .then(data => setWeatchCollectin(data))
     }, [])

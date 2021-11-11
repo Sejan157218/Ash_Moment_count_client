@@ -16,7 +16,7 @@ const OrderPgae = () => {
     const history = useHistory()
 
     useEffect(() => {
-        fetch(`http://localhost:9000/watchCollection/${id}`)
+        fetch(`https://ancient-river-07627.herokuapp.com/watchCollection/${id}`)
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [id])
@@ -29,8 +29,8 @@ const OrderPgae = () => {
         data.productRating = products?.rating;
         data.productStatus = "Pending";
         data.date = new Date().toLocaleDateString();
-        
-        axios.post(`http://localhost:9000/allorder`, data)
+
+        axios.post(`https://ancient-river-07627.herokuapp.com/allorder`, data)
             .then(function (response) {
                 if (response.data.insertedId) {
                     alert('successfully ordered');

@@ -14,7 +14,7 @@ const Reviews = () => {
     const onSubmit = data => {
         data.userEmail = user?.email;
         data.userName = user?.displayName;
-        axios.post(`http://localhost:9000/allreviews`, data)
+        axios.post(`https://ancient-river-07627.herokuapp.com/allreviews`, data)
             .then(function (response) {
                 if (response.data.insertedId) {
                     alert('Review successfully');

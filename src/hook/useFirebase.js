@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import initializationFirebase from "../Firebase/firebase.init";
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signInWithPopup, GoogleAuthProvider, updateProfile, signOut } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signInWithPopup, GoogleAuthProvider, updateProfile, getIdToken, signOut } from "firebase/auth";
 
 initializationFirebase()
 
@@ -8,7 +8,8 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [authError, setAuthError] = useState('');
-    const [isAdmin, setIsAdmin] = useState(false)
+    const [isAdmin, setIsAdmin] = useState(false);
+    const [adminToken, setAdminToken] = useState('');
 
 
 
@@ -81,7 +82,7 @@ const useFirebase = () => {
     // user save in mongoDb
     const saveUser = (email, displayName, method) => {
         const users = { email, displayName }
-        fetch('http://localhost:9000/users', {
+        fetch('https://ancient-river-07627.herokuapp.com/users', {
             method: method,
             headers: {
                 "content-type": "application/json"
@@ -94,7 +95,7 @@ const useFirebase = () => {
 
     // find admin 
     useEffect(() => {
-        fetch(`http://localhost:9000/user/${user?.email}`)
+        fetch(`https://ancient-river-07627.herokuapp.com/user/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setIsAdmin(data.admin)
@@ -105,6 +106,10 @@ const useFirebase = () => {
         const unsubscribed = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user)
+                getIdToken(user)
+                    .then(idToken => {
+                        setAdminToken(idToken)
+                    })
             }
             else {
                 setUser({})
@@ -119,6 +124,7 @@ const useFirebase = () => {
         handlerLoginWithEmailPass,
         handlerToGoogleLogin,
         SignOut,
+        adminToken,
         isAdmin,
         authError,
         isLoading,

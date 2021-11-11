@@ -9,7 +9,7 @@ const ManageAllOrders = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:9000/allorder')
+        fetch('https://ancient-river-07627.herokuapp.com/allorder')
             .then(res => res.json())
             .then(data => {
                 setallOrders(data)
@@ -24,7 +24,7 @@ const ManageAllOrders = () => {
     // status update
     const handleToUpdate = id => {
         const body = { updateSatus: changeStatus }
-        axios.put(`http://localhost:9000/allorder/${id}`, body)
+        axios.put(`https://ancient-river-07627.herokuapp.com/allorder/${id}`, body)
             .then(function (response) {
                 if (response.data.modifiedCount > 0) {
                     setUpdateStatus(true)
@@ -39,7 +39,7 @@ const ManageAllOrders = () => {
     const handlerToDelete = id => {
         const proceed = window.confirm('Are You sure to delete this');
         if (proceed) {
-            axios.delete(`http://localhost:9000/allorder/${id}`)
+            axios.delete(`https://ancient-river-07627.herokuapp.com/allorder/${id}`)
                 .then(function (response) {
                     console.log(response.data)
                     if (response.data.deletedCount > 0) {
