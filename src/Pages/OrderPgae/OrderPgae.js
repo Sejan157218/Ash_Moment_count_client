@@ -27,7 +27,9 @@ const OrderPgae = () => {
         data.productPrice = products?.price;
         data.productDesc = products?.desc;
         data.productRating = products?.rating;
+        data.productStatus = "Pending";
         data.date = new Date().toLocaleDateString();
+        
         axios.post(`http://localhost:9000/allorder`, data)
             .then(function (response) {
                 if (response.data.insertedId) {
@@ -56,6 +58,8 @@ const OrderPgae = () => {
                     <input defaultValue={products?.name} readOnly />
                     <br />
                     <input defaultValue={products?.price} readOnly />
+                    <br />
+                    <input type="number" defaultValue="1" {...register("productQuantity")} placeholder="Product Quantity" />
                     <br />
                     <input type="text" {...register("userName")} placeholder="Full Name" />
                     <br />
