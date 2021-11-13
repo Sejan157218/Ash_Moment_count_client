@@ -25,7 +25,9 @@ const AddProduct = () => {
 
                 <h1 className="my-3">Add Product</h1>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <input type="text" {...register("name")} placeholder="Product Name" />
+                    <input type="text" {...register("brand")} placeholder="Product Brand" />
+                    <br />
+                    <input type="text" {...register("title")} placeholder="Product Title" />
                     <br />
                     <input type="number" {...register("price")} placeholder="Product Price" />
                     <br />
@@ -33,7 +35,9 @@ const AddProduct = () => {
                     <br />
                     <input type="text" {...register("desc")} placeholder="Product description" />
                     <br />
-                    <input type="text" {...register("img")} placeholder="image URL" />
+                    <input type="text" {...register("frontImg")} placeholder="Front image URL" />
+                    <br />
+                    <input type="text" {...register("backImg")} placeholder="Back image URL" />
                     <br />
                     <input className="banner-btn" type="submit" />
                 </form>

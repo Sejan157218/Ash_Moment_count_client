@@ -28,7 +28,7 @@ const Reviews = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input type="text" {...register("productName")} placeholder="Product Name" />
                 <br />
-                <input type="number" {...register("rating")} placeholder="Rating" />
+                <input type="text" {...register("rating")} placeholder="Rating" />
                 <br />
                 <textarea type="text" {...register("reviewDesc")} placeholder="description" />
                 <br />

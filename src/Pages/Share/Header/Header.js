@@ -24,17 +24,18 @@ const Header = () => {
         <Navbar collapseOnSelect expand="md" className={scroll ? "nav-container" : "nav-container-scroll"}>
             <Container>
                 <Navbar.Brand as={Link} to="/" className='header-h1'>𝔸𝕤𝕙 𝕄𝕠𝕞𝕖𝕟𝕥 ℂ𝕠𝕦𝕟𝕥</Navbar.Brand>
+               
                 <Navbar.Toggle />
+                <Navbar.Collapse className="justify-content-start">
+                <Navbar.Text>
+                    <Nav className=" header-nav">
+                        <Nav.Link className="nav-color" as={Link} to="/">Home</Nav.Link>
+                        <Nav.Link className="nav-color" as={Link} to="/aboutus">About Us</Nav.Link>
+                    </Nav>
+                </Navbar.Text>
+                </Navbar.Collapse>
                 <Navbar.Collapse className="justify-content-end">
-                    <Navbar.Text>
-                        <Nav className="me-auto header-nav">
-                            <Nav.Link className="nav-color" as={Link} to="/">Home</Nav.Link>
-                            <Nav.Link className="nav-color" as={Link} to="/aboutus">About Us</Nav.Link>
-
-                            {/* <Nav.Link as={Link} to="/about">About</Nav.Link>
-                            <Nav.Link as={Link} to="/contact">Contact</Nav.Link> */}
-                        </Nav>
-                    </Navbar.Text>
+               
                     <Navbar.Text>
                         <Nav className="me-auto  header-nav">
                             {
@@ -42,7 +43,7 @@ const Header = () => {
                                     <Navbar.Text style={{ display: 'flex' }}>
                                         <Nav.Link className="nav-color" as={Link} to="/dashboard">DashBoard</Nav.Link>
                                         <Nav.Link as={Link} style={{ marginRight: "1rem" }} to="">{user.displayName || user?.email}</Nav.Link>
-                                        <Nav.Link onClick={SignOut}> Log Out</Nav.Link>
+                                        <Nav.Link onClick={SignOut}> Sign Out</Nav.Link>
                                     </Navbar.Text> :
                                     <Navbar.Text style={{ display: 'flex' }}>
                                         <Nav.Link as={Link} style={{ paddingRight: "0" }} to="/signin"> Sign In</Nav.Link>
@@ -52,7 +53,7 @@ const Header = () => {
                         </Nav>
                     </Navbar.Text>
                 </Navbar.Collapse>
-            </Container>
+                </Container>
         </Navbar>
 
 

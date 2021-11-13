@@ -23,10 +23,13 @@ const OrderPgae = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         data.userEmail = user?.email;
-        data.productName = products?.name;
+        data.productbrand = products?.brand;
+        data.productName = products?.title;
         data.productPrice = products?.price;
         data.productDesc = products?.desc;
         data.productRating = products?.rating;
+        data.productfrontImg = products?.frontImg;
+        data.productbackImg = products?.backImg;
         data.productStatus = "Pending";
         data.date = new Date().toLocaleDateString();
 
@@ -46,7 +49,7 @@ const OrderPgae = () => {
             </div>
             <Row xs={1} md={2}>
                 <Col>  <Card border="primary" style={{ width: '100%' }}>
-                    <Card.Img variant="top" src={products?.img} />
+                    <Card.Img variant="top" src={products?.frontImg} />
                     <Card.Body>
 
                         <Card.Text>
@@ -55,7 +58,7 @@ const OrderPgae = () => {
                     </Card.Body>
                 </Card></Col>
                 <Col className="order-form"><form onSubmit={handleSubmit(onSubmit)}>
-                    <input defaultValue={products?.name} readOnly />
+                    <input defaultValue={products?.title} readOnly />
                     <br />
                     <input defaultValue={products?.price} readOnly />
                     <br />

@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
@@ -14,6 +14,8 @@ import DashBoard from './Pages/DashBoard/DashBoard/DashBoard';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 import AboutUS from './Pages/AboutUS/AboutUS';
 import OrderPgae from './Pages/OrderPgae/OrderPgae';
+import ExploreCollection from './Pages/ExploreCollection/ExploreCollection';
+import Footer from './Pages/Share/Footer/Footer';
 
 function App() {
   return (
@@ -32,6 +34,11 @@ function App() {
             </Route>
             <Route path='/aboutus'>
               <AboutUS></AboutUS>
+            </Route>
+            <Route path='/exploreCollection'>
+              
+              <ExploreCollection></ExploreCollection>
+              <Footer></Footer>
             </Route>
             <Route path='/order/:id'>
               <OrderPgae></OrderPgae>

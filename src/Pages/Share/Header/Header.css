@@ -1,29 +1,32 @@
+.navbar-light .navbar-toggler-icon {
+    background-color: #ffff;
+}
 .nav-container{
-    background-color: rgb(18 107 121 / 88%);
-
-    position: relative;
+    position: absolute;
+    z-index: 111;
+    width: 100%;
 
 }
 .nav-container-scroll{
     background-color:  rgba(0, 0, 0, .75);
     color: #fff;
     position: sticky;
-  top: 0;
-  z-index: 10000;
+    top: 0;
+    z-index: 10000;
 
 }
 .header-h1{
     color: #fff!important;
     font-size: 20px;
-    font-weight: 900;
+    font-weight: 400;
 }
-
+.header-nav{
+    text-align: start;
+}
 .header-nav a{
     font-size: 20px;
-    font-weight: 900;
+    font-weight: 400;
     color: #fff!important;
 }
-.header-nav a :hover{
-    color: rgb(67, 196, 216)!important;
-}
+
 

@@ -1,0 +1,71 @@
+
+.card-watchcollection {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  transform-style: preserve-3d;
+  perspective: 600px;
+  transition: 0.5s;
+}
+.watch-collection-container:hover .card-front {
+  transform: rotateX(-180deg);
+}
+.watch-collection-container:hover .card-back {
+  transform: rotateX(0deg);
+}
+
+.card-front {
+    height: 100%;
+    width: 100%;
+  background-position: 50% 50%;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  backface-visibility: hidden;
+  transform: rotateX(0deg);
+  transition: 0.5s;
+}
+
+.card-back {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  backface-visibility: hidden;
+  transform: rotateX(180deg);
+  transition: 0.s;
+  color: #ffffff;
+  text-align: center;
+}
+.social-icons {
+  margin: 30% auto 35% auto;
+  font-size: 26px;
+  display: flex;
+  flex-direction: column
+}
+.social-icon-btn{
+    color: #000; 
+    margin: 2px;
+    text-align: center;
+    background: #fff;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    box-shadow: 0 5px 15px 0 rgb(0 0 0 / 15%);
+    /* font-size: 0; */
+    white-space: nowrap;
+}
+.social-icon-btn:hover{
+    color: #fff; 
+    background: #000;
+}
+.icon-color{
+    color: #ff9e21; 
+}
