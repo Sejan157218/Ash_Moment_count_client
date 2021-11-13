@@ -5,11 +5,10 @@ import useAuth from '../../../hook/useAuth';
 
 
 const AdminRoute = ({ children, ...rest }) => {
-    const { user, isLoading, isAdmin,isLoadingAdmin } = useAuth();
+    const { user, isAdmin,isLoadingAdmin } = useAuth();
     if (isLoadingAdmin) {
         return <Spinner className="mx-auto" animation="border" variant="success" />
     }
-    console.log(isLoadingAdmin,isAdmin);
     return (
         <Route
             {...rest}   

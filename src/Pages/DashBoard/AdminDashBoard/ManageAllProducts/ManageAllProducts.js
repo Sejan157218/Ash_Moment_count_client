@@ -45,7 +45,7 @@ const ManageAllProducts = () => {
                             <td>{product?.title}</td>
                             <td>${product?.price}</td>
                             <td>{product?.rating}</td>
-                            <td><button className="update-btn" onClick={() => handlerToDelete(product?._id)}><i class="fas fa-trash"></i></button></td>
+                            <td><button className="update-btn" onClick={() => handlerToDelete(product?._id)}><i className="fas fa-trash"></i></button></td>
                         </tr>
 
                     )}

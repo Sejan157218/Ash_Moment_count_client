@@ -12,7 +12,6 @@ import SignUp from './Pages/Share/SignUp/SignUp';
 import AuthProvider from './Context/AuthProvider';
 import DashBoard from './Pages/DashBoard/DashBoard/DashBoard';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
-import AboutUS from './Pages/AboutUS/AboutUS';
 import OrderPgae from './Pages/OrderPgae/OrderPgae';
 import ExploreCollection from './Pages/ExploreCollection/ExploreCollection';
 import Footer from './Pages/Share/Footer/Footer';
@@ -32,9 +31,6 @@ function App() {
             </PrivateRoute>
             <Route path='/signin'>
               <SignIn></SignIn>
-            </Route>
-            <Route path='/aboutus'>
-              <AboutUS></AboutUS>
             </Route>
             <Route path='/exploreCollection'>
               <ExploreCollection></ExploreCollection>

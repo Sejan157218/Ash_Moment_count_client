@@ -36,7 +36,7 @@ const SignIn = () => {
                     </form>
                     <p className="pt-3">Or Sign In With</p>
                     <Row>
-                        <Col xs={12} ><Button className="w-100 button-login" onClick={() => handlerGoogleLoin()}> <i class="fab fa-google me-2"></i>Google</Button>
+                        <Col xs={12} ><Button className="w-100 button-login" onClick={() => handlerGoogleLoin()}> <i className="fab fa-google me-2"></i>Google</Button>
                         </Col>
                     </Row>
                     <p className="pt-3">Dont't have account ?  <Nav.Link as={Link} to={'/signup'} className="Services-nav ps-0" style={{ display: "inline" }}>Sing Up</Nav.Link></p>

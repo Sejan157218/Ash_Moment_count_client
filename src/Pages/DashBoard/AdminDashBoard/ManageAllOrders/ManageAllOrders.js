@@ -81,7 +81,7 @@ const ManageAllOrders = () => {
                             <option value="Delivery Completed">Delivery Completed</option>
                         </select>
                                 <button className="update-btn" onClick={() => handleToUpdate(order?._id)}>Update</button></td>
-                            <td><button className="update-btn" onClick={() => handlerToDelete(order?._id)}><i class="fas fa-trash"></i></button></td>
+                            <td><button className="update-btn" onClick={() => handlerToDelete(order?._id)}><i className="fas fa-trash"></i></button></td>
                         </tr>
 
                     )}

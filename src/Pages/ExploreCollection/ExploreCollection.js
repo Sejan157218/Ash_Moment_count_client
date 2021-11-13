@@ -30,13 +30,13 @@ const ExploreCollection = () => {
                     <Col className="watch-collection-container">
                         <Card style={{ height: "20rem" }} className="border-0">
                             <div className="card-watchcollection">
-                                <div style={{ background: `url('${watch?.frontImg}') no-repeat center center`, backgroundSize: 'cover', backgroundPosition: 'center' }} class="card-front"></div>
+                                <div style={{ background: `url('${watch?.frontImg}') no-repeat center center`, backgroundSize: 'cover', backgroundPosition: 'center' }} className="card-front"></div>
                                 <div>
-                                    <div style={{ background: `url('${watch?.backImg}') no-repeat center center`, backgroundSize: 'cover', backgroundPosition: 'center' }} class="card-back">
-                                        <div class="social-icons">
-                                            <NavLink as={Link} to={`order/${watch?._id}`} className="social-icon-btn"> <i class="fas fa-shopping-bag "></i></NavLink>
-                                            <button  className="social-icon-btn border-0"> <i class="fas fa-heart"></i></button>
-                                            <button  className="social-icon-btn border-0"> <i class="fas fa-search"></i></button>
+                                    <div style={{ background: `url('${watch?.backImg}') no-repeat center center`, backgroundSize: 'cover', backgroundPosition: 'center' }} className="card-back">
+                                        <div className="social-icons">
+                                            <NavLink as={Link} to={`order/${watch?._id}`} className="social-icon-btn"> <i className="fas fa-shopping-bag "></i></NavLink>
+                                            <button  className="social-icon-btn border-0"> <i className="fas fa-heart"></i></button>
+                                            <button  className="social-icon-btn border-0"> <i className="fas fa-search"></i></button>
                                         </div>
                                     </div>
                                 </div>

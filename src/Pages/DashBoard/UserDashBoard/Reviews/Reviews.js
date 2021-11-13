@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
-import { useHistory } from 'react-router';
 import useAuth from '../../../../hook/useAuth';
 import "./Reviews.css";
 
@@ -9,7 +8,6 @@ import "./Reviews.css";
 const Reviews = () => {
     const [ratingError, setRatingError] = useState('')
     const { user } = useAuth();
-    const history = useHistory()
     const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = data => {

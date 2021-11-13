@@ -40,13 +40,13 @@ const MyOrders = () => {
                     <Col className="watch-collection-container">
                         <Card style={{ height: "20rem" }} className="border-0">
                             <div className="card-watchcollection">
-                                <div style={{ background: `url('${order?.productfrontImg}') no-repeat center center`, backgroundSize: 'cover', backgroundPosition: 'center' }} class="card-front"></div>
+                                <div style={{ background: `url('${order?.productfrontImg}') no-repeat center center`, backgroundSize: 'cover', backgroundPosition: 'center' }} className="card-front"></div>
                                 <div>
-                                    <div style={{ background: `url('${order?.productbackImg}') no-repeat center center`, backgroundSize: 'cover', backgroundPosition: 'center' }} class="card-back">
-                                        <div class="social-icons">
-                                            <button  onClick={() => handlerToDelete(order?._id)} className="social-icon-btn border-0"> <i class="fas fa-trash"></i></button>
-                                            <button  className="social-icon-btn border-0"> <i class="fas fa-heart"></i></button>
-                                            <button className="social-icon-btn border-0"> <i class="fas fa-search"></i></button>
+                                    <div style={{ background: `url('${order?.productbackImg}') no-repeat center center`, backgroundSize: 'cover', backgroundPosition: 'center' }} className="card-back">
+                                        <div className="social-icons">
+                                            <button  onClick={() => handlerToDelete(order?._id)} className="social-icon-btn border-0"> <i className="fas fa-trash"></i></button>
+                                            <button  className="social-icon-btn border-0"> <i className="fas fa-heart"></i></button>
+                                            <button className="social-icon-btn border-0"> <i className="fas fa-search"></i></button>
                                         </div>
                                     </div>
                                 </div>

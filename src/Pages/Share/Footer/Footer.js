@@ -17,8 +17,8 @@ const Footer = () => {
                         <Nav className="flex-column content-footer">
                             <Nav className="flex-column content-footer">
                                 <Nav.Link as={Link} to="/home">Home</Nav.Link>
-                                <Nav.Link as={Link} to="/about">About Us</Nav.Link>
-                                <Nav.Link as={Link} to="/contact" >Contacts</Nav.Link>
+                                <Nav.Link as={Link} to="#">About Us</Nav.Link>
+                                <Nav.Link as={Link} to="#" >Contacts</Nav.Link>
 
                             </Nav>
 
