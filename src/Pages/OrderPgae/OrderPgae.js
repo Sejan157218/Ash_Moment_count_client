@@ -5,9 +5,9 @@ import { useState } from 'react';
 import { useHistory, useParams } from 'react-router';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
-
-import { Card, Col, Row } from 'react-bootstrap';
+import { Card, Col, Container, Row } from 'react-bootstrap';
 import useAuth from '../../hook/useAuth';
+import "./OrderPgae.css";
 
 const OrderPgae = () => {
     const { user } = useAuth();
@@ -43,39 +43,43 @@ const OrderPgae = () => {
             })
     };
     return (
-        <div className="container">
-            <div className="text-center my-5">
+        <>
+            <div className="order-h1 py-5">
                 <h1>Order Now</h1>
             </div>
-            <Row xs={1} md={2}>
-                <Col>  <Card border="primary" style={{ width: '100%' }}>
-                    <Card.Img variant="top" src={products?.frontImg} />
-                    <Card.Body>
+            <div className="order-page">
+                <Container >
+                    <Row xs={1} md={2} >
+                        <Col>
+                            <Card >
+                                <Card.Img style={{ height: "15rem" }} src={products?.frontImg} />
+                                <Card.Body>
+                                    <Card.Text>
+                                        {products?.desc}
+                                    </Card.Text>
+                                </Card.Body>
+                            </Card></Col>
+                        <Col className="order-form my-3"><form onSubmit={handleSubmit(onSubmit)}>
+                            <input defaultValue={products?.title} readOnly className="review-btn" />
+                            <br />
+                            <input defaultValue={products?.price} readOnly className="review-btn" />
+                            <br />
+                            <input type="number" defaultValue="1" {...register("productQuantity")} placeholder="Product Quantity" className="review-btn" />
+                            <br />
+                            <input type="text" {...register("userName")} placeholder="Full Name" className="review-btn" />
+                            <br />
+                            <input type="number" {...register("userPhone")} placeholder="Phone Number" className="review-btn" />
+                            <br />
+                            <input type="text" {...register("userAddress")} placeholder="Address" className="review-btn mb-3" />
+                            <br />
+                            <input  type="submit" className="review-btn mt-3" />
+                        </form></Col>
 
-                        <Card.Text>
-                            {products?.desc}
-                        </Card.Text>
-                    </Card.Body>
-                </Card></Col>
-                <Col className="order-form"><form onSubmit={handleSubmit(onSubmit)}>
-                    <input defaultValue={products?.title} readOnly />
-                    <br />
-                    <input defaultValue={products?.price} readOnly />
-                    <br />
-                    <input type="number" defaultValue="1" {...register("productQuantity")} placeholder="Product Quantity" />
-                    <br />
-                    <input type="text" {...register("userName")} placeholder="Full Name" />
-                    <br />
-                    <input type="number" {...register("userPhone")} placeholder="Phone Number" />
-                    <br />
-                    <input type="text" {...register("userAddress")} placeholder="Address" />
-                    <br />
-                    <input className="banner-btn" type="submit" />
-                </form></Col>
-            </Row>
+                    </Row>
+                </Container>
 
-
-        </div>
+            </div>
+        </>
     );
 };
 

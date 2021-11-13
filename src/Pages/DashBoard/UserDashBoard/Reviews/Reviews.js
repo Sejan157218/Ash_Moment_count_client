@@ -3,10 +3,11 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import { useHistory } from 'react-router';
 import useAuth from '../../../../hook/useAuth';
-
+import "./Reviews.css";
 
 
 const Reviews = () => {
+    
     const { user } = useAuth();
     const history = useHistory()
     const { register, handleSubmit, reset } = useForm();
@@ -24,15 +25,15 @@ const Reviews = () => {
             })
     };
     return (
-        <div>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <input type="text" {...register("productName")} placeholder="Product Name" />
+        <div className="review-container">
+            <form onSubmit={handleSubmit(onSubmit)} className="review-from">
+                <input type="text" {...register("productName")} placeholder="Product Name"  className="review-btn"/>
                 <br />
-                <input type="text" {...register("rating")} placeholder="Rating" />
+                <input type="text" {...register("rating")} placeholder="Rating" className="review-btn"/>
                 <br />
-                <textarea type="text" {...register("reviewDesc")} placeholder="description" />
+                <textarea type="text" {...register("reviewDesc")} placeholder="Description" className="review-btn"/>
                 <br />
-                <input className="banner-btn" type="submit" />
+                <input className="review-btn" type="submit" />
             </form>
         </div>
     );

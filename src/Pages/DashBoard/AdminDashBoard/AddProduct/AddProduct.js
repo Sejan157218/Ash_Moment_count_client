@@ -16,30 +16,25 @@ const AddProduct = () => {
             })
     };
     return (
-        <div className="text-center">
-            <div className="add-container">
-
-            </div>
-
+        <div className="add-container">
             <div className="form-container container">
-
-                <h1 className="my-3">Add Product</h1>
+                <h1 className="my-3" style={{color:"#fff"}}>Add Product</h1>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <input type="text" {...register("brand")} placeholder="Product Brand" />
+                    <input type="text" {...register("brand")} placeholder="Product Brand" className="review-btn"/>
                     <br />
-                    <input type="text" {...register("title")} placeholder="Product Title" />
+                    <input type="text" {...register("title")} placeholder="Product Title" className="review-btn"/>
                     <br />
-                    <input type="number" {...register("price")} placeholder="Product Price" />
+                    <input type="number" {...register("price")} placeholder="Product Price" className="review-btn"/>
                     <br />
-                    <input type="text" {...register("rating")} placeholder="Rating" />
+                    <input type="text" {...register("rating")} placeholder="Rating" className="review-btn"/>
                     <br />
-                    <input type="text" {...register("desc")} placeholder="Product description" />
+                    <input type="text" {...register("desc")} placeholder="Product description" className="review-btn"/>
                     <br />
-                    <input type="text" {...register("frontImg")} placeholder="Front image URL" />
+                    <input type="text" {...register("frontImg")} placeholder="Front image URL" className="review-btn"/>
                     <br />
-                    <input type="text" {...register("backImg")} placeholder="Back image URL" />
+                    <input type="text" {...register("backImg")} placeholder="Back image URL" className="review-btn"/>
                     <br />
-                    <input className="banner-btn" type="submit" />
+                    <input  type="submit" className="review-btn"/>
                 </form>
             </div>
 

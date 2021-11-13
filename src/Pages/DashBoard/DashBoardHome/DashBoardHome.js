@@ -1,9 +1,10 @@
 import React from 'react';
+import "./DashBoardHome.css";
 
 const DashBoardHome = () => {
     return (
-        <div>
-            DashBoardHome
+        <div className="bashboard-container">
+            <div className="bashboard-header">WeoCome To DashBoard</div>
         </div>
     );
 };

@@ -1,0 +1,8 @@
+.dashboard-menu{
+    text-align: left;
+    padding-left: 5%;
+    border-right: 1px solid #000;
+}
+.dashboard-menu a{
+    color: #000;
+}

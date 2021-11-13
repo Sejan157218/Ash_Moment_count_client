@@ -4,6 +4,7 @@ import Header from '../../Share/Header/Header';
 import ShowReviews from '../../ShowReviews/ShowReviews';
 import Banner from '../Banner/Banner';
 import CollectionHome from '../CollectionHome/CollectionHome';
+import DiscoverCollection from '../DiscoverCollection/DiscoverCollection';
 import WatchCollectionsHome from '../WatchCollectionsHome/WatchCollectionsHome';
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
             <CollectionHome></CollectionHome>
             <WatchCollectionsHome />
             <ShowReviews></ShowReviews>
+            <DiscoverCollection/>
             <Footer />
         </div>
     );

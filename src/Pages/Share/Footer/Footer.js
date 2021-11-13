@@ -10,7 +10,7 @@ const Footer = () => {
             <Container className="py-5">
                 <Row>
                     <Col sm={4} xs={6}><h4>𝔸𝕤𝕙 𝕄𝕠𝕞𝕖𝕟𝕥 ℂ𝕠𝕦𝕟𝕥</h4>
-                        <p></p>
+                        <p>At WatchShop, you can guarantee you will find more watch brands than anywhere else. From the biggest designer brands, to the best of luxury and some hidden gems, along with outstanding service and next day delivery, WatchShop is the hottest place to buy your next watch.</p>
 
                     </Col>
                     <Col sm={3} xs={6}>
@@ -31,7 +31,7 @@ const Footer = () => {
                             {Array.from({ length: 4 }).map((_, idx) => (
                                 <Col>
                                     <Card>
-                                        <Card.Img variant="top" src={''} />
+                                        <Card.Img variant="top" src={'https://i.ibb.co/k9NjxKg/15.jpg'} />
                                     </Card>
                                 </Col>
                             ))}

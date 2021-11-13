@@ -13,13 +13,14 @@ import DashBoardHome from '../DashBoardHome/DashBoardHome';
 import MyOrders from '../UserDashBoard/MyOrders/MyOrders';
 import Pay from '../UserDashBoard/Pay/Pay';
 import Reviews from '../UserDashBoard/Reviews/Reviews';
+import "./DashBoard.css";
 const DashBoard = () => {
     const { user, isAdmin, SignOut } = useAuth();
     let { path, url } = useRouteMatch();
     return (
         <div>
             <Row>
-                <Col xs={12} md={3}>
+                <Col xs={12} md={2} className="dashboard-menu">
                     <Nav className="flex-column">
 
                         {
@@ -46,7 +47,7 @@ const DashBoard = () => {
 
                     </Nav>
                 </Col>
-                <Col xs={12} md={9}>
+                <Col xs={12} md={10}>
                     <Switch>
                         <PrivateRoute exact path={`${path}`}>
                             <DashBoardHome></DashBoardHome>

@@ -1,0 +1,41 @@
+.manage-order{
+    background-image: url("https://i.ibb.co/hmSZNqM/salvador-escalante-Efjlkpo-Gjs4-unsplash.jpg"),
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.table-custom th{
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    fill: #000;
+    color: #000;
+    background-color: #FFF;
+    border: none;
+}
+.table-custom td{
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    fill: #000;
+    color: #000;
+    background-color: #FFF;
+    border: none;
+    margin-bottom: 2px;
+}
+.update-btn{
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    fill: #000;
+    color: #000;
+    background-color: #FFF;
+    border: none; 
+}
+.update-btn:hover{
+    color: #fff;
+    background-color: #000; 
+}

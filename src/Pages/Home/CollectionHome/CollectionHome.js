@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Card, Col, Container, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import "./CollectionHome.css";
 const CollectionHome = () => {
     const Collection = [
@@ -25,7 +26,7 @@ const CollectionHome = () => {
                         <Card.Img className="collection-img"  src={collect?.img} />
                         <div className="collection-body">
                             <Card.Title className="collection-title">{collect?.title}</Card.Title>
-                            <Button className="shop-btn">Shop Now</Button>
+                           <Link to="/exploreCollection"> <Button className="shop-btn">Shop Now</Button></Link>
                         </div>
                     </Card>
                 </Col>

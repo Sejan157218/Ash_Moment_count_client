@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Button, Card, Col, Row } from 'react-bootstrap';
-
+import { Table } from 'react-bootstrap';
+import "./ManageAllProducts.css";
 const ManageAllProducts = () => {
     const [allProducts, setallProducts] = useState([]);
 
@@ -26,24 +26,31 @@ const ManageAllProducts = () => {
         }
     }
     return (
-        <div>
-            allProducts {allProducts.length}
-            <Row xs={1} md={2} className="g-4">
-                {allProducts.map(product => (
-                    <Col>
-                        <Card>
-                            <Card.Img variant="top" src={product?.img} />
-                            <Card.Body>
-                                <Card.Title>{product?.name}</Card.Title>
-                                <Card.Text>
-                                    {product?.price}
-                                </Card.Text>
-                            </Card.Body>
-                            <Button onClick={() => handlerToDelete(product?._id)}> delete</Button>
-                        </Card>
-                    </Col>
-                ))}
-            </Row>
+        <div className="allproduct">
+            <Table striped bordered hover responsive className="table-custom">
+                <thead>
+                    <tr>
+                        <th>Product Brand</th>
+                        <th>Product Name</th>
+                        <th>Product Price</th>
+                        <th>Product Rating</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {allProducts.map(product =>
+                        <tr className="mb-2">
+
+                            <td>{product?.brand}</td>
+                            <td>{product?.title}</td>
+                            <td>${product?.price}</td>
+                            <td>{product?.rating}</td>
+                            <td><button className="update-btn" onClick={() => handlerToDelete(product?._id)}><i class="fas fa-trash"></i></button></td>
+                        </tr>
+
+                    )}
+                </tbody>
+            </Table>
         </div>
     );
 };

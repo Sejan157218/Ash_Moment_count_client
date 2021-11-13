@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Col, Container, Row } from 'react-bootstrap';
+import { Card, Container, Row } from 'react-bootstrap';
 import Rating from 'react-rating';
 import "./ShowReviews.css";
 
@@ -34,8 +34,6 @@ const ShowReviews = () => {
                                 />
                                     <Card.Title>____ {review?.userName}</Card.Title>
                                 </Card.Body>
-
-
                             </div>
                         </div>
                     </div>

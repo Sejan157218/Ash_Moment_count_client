@@ -30,7 +30,6 @@ const Header = () => {
                 <Navbar.Text>
                     <Nav className=" header-nav">
                         <Nav.Link className="nav-color" as={Link} to="/">Home</Nav.Link>
-                        <Nav.Link className="nav-color" as={Link} to="/aboutus">About Us</Nav.Link>
                     </Nav>
                 </Navbar.Text>
                 </Navbar.Collapse>
@@ -41,7 +40,7 @@ const Header = () => {
                             {
                                 user.email ?
                                     <Navbar.Text style={{ display: 'flex' }}>
-                                        <Nav.Link className="nav-color" as={Link} to="/dashboard">DashBoard</Nav.Link>
+                                        <Nav.Link className="nav-color ms-2" as={Link} to="/dashboard">DashBoard</Nav.Link>
                                         <Nav.Link as={Link} style={{ marginRight: "1rem" }} to="">{user.displayName || user?.email}</Nav.Link>
                                         <Nav.Link onClick={SignOut}> Sign Out</Nav.Link>
                                     </Navbar.Text> :

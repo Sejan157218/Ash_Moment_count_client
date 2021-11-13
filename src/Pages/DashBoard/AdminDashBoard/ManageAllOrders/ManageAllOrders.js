@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { Table } from 'react-bootstrap';
+import "./ManageAllOrders.css";
 
 const ManageAllOrders = () => {
     const [allOrders, setallOrders] = useState([]);
@@ -52,32 +53,40 @@ const ManageAllOrders = () => {
     }
 
     return (
-        <div>
-            allOrders {allOrders.length}
-            {
-                allOrders.map(order =>
-                    <div>
-                        <h1>{order?.productName}</h1>
-                        <h1>{order?.userName}</h1>
-                        <h1>{order?.productPrice}</h1>
-                        <h1>{order?.productStatus}</h1>
+        <div className="manage-order">
+            <Table striped bordered hover responsive className="table-custom">
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>User Name</th>
+                        <th>user Email</th>
+                        <th>Status</th>
+                        <th>Status Update</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {allOrders.map(order =>
+                        <tr className="mb-2">
 
-                        <select
+                            <td>{order?.productName}</td>
+                            <td>{order?.userName}</td>
+                            <td>{order?.userEmail}</td>
+                            <td>{order?.productStatus}</td>
+                            <td>   <select
                             onChange={handleStatusChange}
                         >
                             <option value="Processing">Processing</option>
                             <option value="Shift">Shift</option>
                             <option value="Delivery Completed">Delivery Completed</option>
                         </select>
-                        <button onClick={() => handleToUpdate(order?._id)}>Update</button>
+                                <button className="update-btn" onClick={() => handleToUpdate(order?._id)}>Update</button></td>
+                            <td><button className="update-btn" onClick={() => handlerToDelete(order?._id)}><i class="fas fa-trash"></i></button></td>
+                        </tr>
 
-                        <button onClick={() => handlerToDelete(order?._id)}>Delete</button>
-                    </div>
-
-
-                )
-            }
-
+                    )}
+                </tbody>
+            </Table>
         </div>
     );
 };

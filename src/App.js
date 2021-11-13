@@ -36,7 +36,6 @@ function App() {
               <AboutUS></AboutUS>
             </Route>
             <Route path='/exploreCollection'>
-              
               <ExploreCollection></ExploreCollection>
               <Footer></Footer>
             </Route>

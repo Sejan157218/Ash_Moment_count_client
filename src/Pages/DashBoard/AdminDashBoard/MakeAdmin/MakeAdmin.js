@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import { useForm } from "react-hook-form";
 import useAuth from '../../../../hook/useAuth';
+import "./MakeAdmin.css";
 
 const MakeAdmin = () => {
     const { register, handleSubmit, reset } = useForm();
@@ -26,11 +27,11 @@ const MakeAdmin = () => {
         e.preventDefault()
     };
     return (
-        <div>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <input placeholder="Enter Email To Make Admin" {...register("email")} />
+        <div className="makeadmin-container">
+            <form onSubmit={handleSubmit(onSubmit)} className="makeadmin-from">
+                <input className="review-btn" placeholder="Enter Email To Make Admin" {...register("email")} />
                 <br />
-                <input type="submit" />
+                <input className="review-btn" type="submit" />
             </form>
         </div>
     );

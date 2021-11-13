@@ -1,0 +1,37 @@
+.review-container{
+    background-image: url("https://i.ibb.co/hmSZNqM/salvador-escalante-Efjlkpo-Gjs4-unsplash.jpg"),
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.review-from{
+  width: 50%;
+}
+  .review-from input{
+    width: 100%;
+  margin-bottom: 5px;
+  }
+  .review-from textarea{
+    width: 100%;
+  }
+  .review-btn{
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    padding: 10px 25px 10px 25px;
+    fill: #000;
+    color: #000;
+    background-color: #FFF;
+    border: none;
+  }
+  .review-btn:hover{
+    color: #FFF;
+    background-color: #000;
+    border: none;
+  }

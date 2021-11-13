@@ -1,0 +1,28 @@
+.discovercollection-img{
+    height: 20rem;
+}
+.discovercollection-body{
+    position: absolute;
+    bottom: -51px;
+    font-size: 24px;
+    background-color: #fff;
+    padding: 1rem;
+    
+}
+.discovercollection-title{
+
+    font-size: 15px;
+}
+.discovercollection-btn{
+    font-size: 11px;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 2.2em;
+    letter-spacing: 1px;
+    padding: 5px 22px 5px 22px;
+    fill: #000;
+    color: #fff;
+    background-color: #000;
+    border: none;
+    border-radius: 0px;
+}
