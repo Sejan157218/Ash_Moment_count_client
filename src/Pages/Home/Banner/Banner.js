@@ -40,7 +40,7 @@ const Banner = () => {
                   {item.heading2}
                 </span>
               </h1>
-              <Link to='/exploreCollection'><button className="banner-button">Explore Collections</button></Link>
+              <Link to='/exploreCollection'><button className="banner-button">SHOP COLLECTION <i class="fas fa-arrow-right ms-1"></i></button></Link>
             </div>
           </div>
         ))}
