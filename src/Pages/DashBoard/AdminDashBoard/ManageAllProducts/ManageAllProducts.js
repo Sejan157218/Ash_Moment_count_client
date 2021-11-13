@@ -13,14 +13,14 @@ const ManageAllProducts = () => {
 
     // handler to delete product
     const handlerToDelete = id => {
-        const proceed = window.confirm('Are You sure to delete this');
+        const proceed = window.confirm('Are You Confirm to delete this');
         if (proceed) {
             axios.delete(`https://ancient-river-07627.herokuapp.com/watchCollection/${id}`)
                 .then(function (response) {
                     if (response.data.deletedCount > 0) {
                         const filterOrder = allProducts.filter(product => product._id !== id);
                         setallProducts(filterOrder)
-                        alert('successfully delete');
+                        alert('successfully deleted');
                     }
                 })
         }

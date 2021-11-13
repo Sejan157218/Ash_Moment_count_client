@@ -14,3 +14,11 @@
 width: 60%;
 margin-bottom: 10px;
 }
+.rating-error{
+background-color: #fff;
+color: #000;
+margin-bottom: 0px;
+font-size: 25px;
+width: 60%;
+text-align: center;
+}

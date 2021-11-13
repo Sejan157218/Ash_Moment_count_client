@@ -16,6 +16,7 @@ import AboutUS from './Pages/AboutUS/AboutUS';
 import OrderPgae from './Pages/OrderPgae/OrderPgae';
 import ExploreCollection from './Pages/ExploreCollection/ExploreCollection';
 import Footer from './Pages/Share/Footer/Footer';
+import NotFound from './Pages/Share/NotFound/NotFound';
 
 function App() {
   return (
@@ -39,11 +40,14 @@ function App() {
               <ExploreCollection></ExploreCollection>
               <Footer></Footer>
             </Route>
-            <Route path='/order/:id'>
+            <PrivateRoute path='/order/:id'>
               <OrderPgae></OrderPgae>
-            </Route>
+            </PrivateRoute>
             <Route path='/signup'>
               <SignUp></SignUp>
+            </Route>
+            <Route path='*'>
+              <NotFound></NotFound>
             </Route>
           </Switch>
         </Router>

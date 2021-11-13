@@ -7,6 +7,7 @@ initializationFirebase()
 const useFirebase = () => {
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
+    const [isLoadingAdmin, setIsLoadingAdmin] = useState(true);
     const [authError, setAuthError] = useState('');
     const [isAdmin, setIsAdmin] = useState(false);
     const [adminToken, setAdminToken] = useState('');
@@ -39,7 +40,6 @@ const useFirebase = () => {
 
     // handler to login with email and pass
     const handlerLoginWithEmailPass = (email, password, history, location) => {
-        console.log(email, password, location, history);
         setIsLoading(true)
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
@@ -95,12 +95,15 @@ const useFirebase = () => {
 
     // find admin 
     useEffect(() => {
+        setIsLoadingAdmin(true)
         fetch(`https://ancient-river-07627.herokuapp.com/user/${user?.email}`)
             .then(res => res.json())
             .then(data => {
-                setIsAdmin(data.admin)
+                setIsAdmin(data?.admin)
+                setIsLoadingAdmin(false)
             })
-    }, [user.email])
+            
+    }, [user?.email])
     // onAuthStateChanged
     useEffect(() => {
         const unsubscribed = onAuthStateChanged(auth, (user) => {
@@ -124,6 +127,7 @@ const useFirebase = () => {
         handlerLoginWithEmailPass,
         handlerToGoogleLogin,
         SignOut,
+        isLoadingAdmin,
         adminToken,
         isAdmin,
         authError,

@@ -24,7 +24,7 @@ const MyOrders = () => {
                     if (response.data.deletedCount > 0) {
                         const filterProduct = myOrder.filter(order => order._id !== id);
                         setMyOrder(filterProduct)
-                        alert('delete successFully')
+                        alert('deleted successFully')
                     }
                 })
                 .catch(function (error) {

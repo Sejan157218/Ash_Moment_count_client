@@ -36,7 +36,7 @@ const OrderPgae = () => {
         axios.post(`https://ancient-river-07627.herokuapp.com/allorder`, data)
             .then(function (response) {
                 if (response.data.insertedId) {
-                    alert('successfully ordered');
+                    alert('Order successfull');
                     reset();
                     history.push('/')
                 }

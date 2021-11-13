@@ -1,10 +1,13 @@
-.img-notfound{
-    margin-top: 4rem;
-}
+.not-found{
+    background-image: url("https://i.ibb.co/Xjw719c/Http-404-error-not-found-page-template-concept-Error-page-404-message-and-businessperson-without-hea.jpg"),
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-.not-btn{
-    padding: 10px 20px;
-    border: none;
-    background-color: #fc6b4f;
-    color: #fff;
-}

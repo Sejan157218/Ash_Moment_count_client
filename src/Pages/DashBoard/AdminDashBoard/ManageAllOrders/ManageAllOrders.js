@@ -29,7 +29,7 @@ const ManageAllOrders = () => {
             .then(function (response) {
                 if (response.data.modifiedCount > 0) {
                     setUpdateStatus(true)
-                    alert('successfully update Status');
+                    alert('update Status successfully');
                     setUpdateStatus(false)
                 }
             })
@@ -38,7 +38,7 @@ const ManageAllOrders = () => {
     // delete order
 
     const handlerToDelete = id => {
-        const proceed = window.confirm('Are You sure to delete this');
+        const proceed = window.confirm('Are You Confirm to delete this');
         if (proceed) {
             axios.delete(`https://ancient-river-07627.herokuapp.com/allorder/${id}`)
                 .then(function (response) {

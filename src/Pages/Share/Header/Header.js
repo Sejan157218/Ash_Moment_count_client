@@ -24,17 +24,18 @@ const Header = () => {
         <Navbar collapseOnSelect expand="md" className={scroll ? "nav-container" : "nav-container-scroll"}>
             <Container>
                 <Navbar.Brand as={Link} to="/" className='header-h1'>𝔸𝕤𝕙 𝕄𝕠𝕞𝕖𝕟𝕥 ℂ𝕠𝕦𝕟𝕥</Navbar.Brand>
-               
+
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-start">
-                <Navbar.Text>
-                    <Nav className=" header-nav">
-                        <Nav.Link className="nav-color" as={Link} to="/">Home</Nav.Link>
-                    </Nav>
-                </Navbar.Text>
+                    <Navbar.Text>
+                        <Nav className=" header-nav">
+                            <Nav.Link className="nav-color" as={Link} to="/">Home</Nav.Link>
+                            <Nav.Link className="nav-color" as={Link} to="/exploreCollection">Watch Collection</Nav.Link>
+                        </Nav>
+                    </Navbar.Text>
                 </Navbar.Collapse>
                 <Navbar.Collapse className="justify-content-end">
-               
+
                     <Navbar.Text>
                         <Nav className="me-auto  header-nav">
                             {
@@ -52,7 +53,7 @@ const Header = () => {
                         </Nav>
                     </Navbar.Text>
                 </Navbar.Collapse>
-                </Container>
+            </Container>
         </Navbar>
 
 
